@@ -1,12 +1,5 @@
 # ReScript / Vite Starter Template
 
-Notes:
-pnpm create rescript-app
-
-https://www.geeksforgeeks.org/create-a-stop-watch-using-reactjs/
-
-// Talk about the difference between useEffects
-
 This is a Vite-based template with following setup:
 
 - [ReScript](https://rescript-lang.org) 10.1 with @rescript/react and JSX 4 automatic mode

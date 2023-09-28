@@ -7,36 +7,50 @@ let make = (
   ~onPauseResumeClick,
 ) => {
   let startButton = (
-    <button
-      className="inline-block rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative"
+    <Button
+      className=`
+        bg-sky-400
+        text-white
+        hover:bg-sky-500
+        hover:shadow-md
+      `
+      text="Start"
       onClick={onStartClick}
-    >
-      {React.string("Start")}
-    </button>
+    />
   )
 
   let activeButtons = (
-    <>
-      <button
-        className="inline-block rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative"
+    <div className="flex justify-between gap-2">
+      <Button
+        className=`
+          bg-yellow-400
+          text-white
+          hover:bg-yellow-500
+          hover:shadow-md
+        `
+        text="Reset"
         onClick={onResetClick}
-      >
-        {React.string("Reset")}
-      </button>
+      />
 
-      <button
-        className="inline-block rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative"
+      <Button
+        className=`
+          bg-gray-400
+          text-white
+          hover:bg-gray-500
+          hover:shadow-md
+        `
+        text={
+          {switch isPaused {
+            | true => "Resume"
+            | _ => "Pause"
+          }}
+        }
         onClick={onPauseResumeClick}
-      >
-        {switch isPaused {
-          | true => React.string("Resume")
-          | _ => React.string("Pause")
-        }}
-      </button>
-    </>
+      />
+    </div>
   )
 
-  <div className="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+  <div className="mx-auto">
     {isActive ? activeButtons : startButton}
   </div>
 }

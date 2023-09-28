@@ -5,9 +5,11 @@ let make = (~time) => {
   let d3 = Formatter.formatD3(time)
 
   <div>
-    <span>{React.string(d1)}</span>
-    <span>{React.string(d2)}</span>
-    <span>{React.string(d3)}</span>
+    <Digit className="w-40" digit={d1} />
+    <Digit className="w-8" digit={":"} />
+    <Digit className="w-40" digit={d2} />
+    <Digit className="w-8" digit={":"} />
+    <Digit className="w-40" digit={d3} />
   </div>
 }
 

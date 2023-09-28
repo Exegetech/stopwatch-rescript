@@ -77,19 +77,23 @@ function App(props) {
             return 0;
           }));
   };
-  return JsxRuntime.jsxs("div", {
-              children: [
-                JsxRuntime.jsx(Timer.make, {
-                      time: match$2[0]
-                    }),
-                JsxRuntime.jsx(Controls.make, {
-                      isActive: isActive,
-                      isPaused: isPaused,
-                      onStartClick: handleStart,
-                      onResetClick: handleReset,
-                      onPauseResumeClick: handlePauseResume
-                    })
-              ]
+  return JsxRuntime.jsx("div", {
+              children: JsxRuntime.jsxs("div", {
+                    children: [
+                      JsxRuntime.jsx(Timer.make, {
+                            time: match$2[0]
+                          }),
+                      JsxRuntime.jsx(Controls.make, {
+                            isActive: isActive,
+                            isPaused: isPaused,
+                            onStartClick: handleStart,
+                            onResetClick: handleReset,
+                            onPauseResumeClick: handlePauseResume
+                          })
+                    ],
+                    className: "\n      h-80\n      bg-red-500\n      rounded-xl\n      text-white\n      flex\n      flex-col \n      justify-between\n      p-8\n    "
+                  }),
+              className: "\n    mt-32\n    container\n    mx-auto\n    flex\n    flex-row\n    justify-center\n  "
             });
 }
 

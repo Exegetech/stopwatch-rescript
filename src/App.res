@@ -53,15 +53,33 @@ let make = () => {
     setTime((_prev) => 0)
   }
 
-  <div>
-    <Timer time=time />
+  <div className=`
+    mt-32
+    container
+    mx-auto
+    flex
+    flex-row
+    justify-center
+  `>
+    <div className=`
+      h-80
+      bg-red-500
+      rounded-xl
+      text-white
+      flex
+      flex-col 
+      justify-between
+      p-8
+    `>
+      <Timer time=time />
 
-    <Controls
-      isActive={isActive}
-      isPaused={isPaused}
-      onStartClick={handleStart}
-      onResetClick={handleReset}
-      onPauseResumeClick={handlePauseResume}
-    />
+      <Controls
+        isActive={isActive}
+        isPaused={isPaused}
+        onStartClick={handleStart}
+        onResetClick={handleReset}
+        onPauseResumeClick={handlePauseResume}
+      />
+    </div>
   </div>
 }
