@@ -45,7 +45,7 @@ let make = () => {
   }
 
   let handlePauseResume = (_e) => {
-    setIsPaused((_prev) => !isPaused)
+    setIsPaused((prev) => !prev)
   }
 
   let handleReset = (_e) => {

@@ -65,8 +65,8 @@ function App(props) {
           }));
   };
   var handlePauseResume = function (_e) {
-    Curry._1(setIsPaused, (function (_prev) {
-            return !isPaused;
+    Curry._1(setIsPaused, (function (prev) {
+            return !prev;
           }));
   };
   var handleReset = function (_e) {
